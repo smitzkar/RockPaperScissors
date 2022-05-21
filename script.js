@@ -4,15 +4,24 @@ function scriptTest() {
   console.log("Script loaded.");
 }
 
+// Take player choice and validate
 function playerInput() {
-  console.log("Choose between rock/paper/scissors.\n Alternatively enter 1, 2, 3.");
-  let tempVar = prompt("Rock, paper or scissors?");
+
   const possibleInput = ["rock", "paper", "scissors"];
-  if (!possibleInput.includes(tempVar)) {
-    console.log("Please enter 'rock', 'paper' or 'scissors'!");
+  let validated = false;
+
+  while (validated == false) {
+    let tempVar = prompt("Please choose from rock, paper or scissors.");
+    // if (!possibleInput.includes(tempVar)) {
+    // }
+    else {
+      validated = true;
+    }
   }
 }
 
+// Main function to start the game
 function gameStart(){
   let playerChoice = playerInput();
+  console.log("Computer is working...");
 }
