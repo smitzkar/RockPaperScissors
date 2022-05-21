@@ -4,6 +4,12 @@ function scriptTest() {
   console.log("Script loaded.");
 }
 
+// temporary global variable
+let player;
+let computer;
+let winner;
+
+
 // Take player choice and validate
 function playerAnswer() {
 
@@ -18,6 +24,20 @@ function playerAnswer() {
       validated = true;
     }
   }
+
+  // Transform input to integer for comparison
+  if (playerHand === "rock"){
+    playerHand = 0;
+  }
+  else if (playerHand === "paper"){
+    playerHand = 1;
+  }
+  else playerHand = 2;
+  
+  
+  // temporary storage
+  player = playerHand;
+
   return playerHand;
 }
 
@@ -28,10 +48,40 @@ function getRandInt(max) {
 
 // Generate computer choice -> rng
 function computerAnswer() {
-  return getRandInt(3);
+  // temporary solution
+  computer = getRandInt(3);
+  return computer;
 }
 
 // Compare player vs computer choice, return answer -> case
+function compareResults(){
+  switch(true){
+    default: console.log("Something went wrong!");
+    break;
+
+    case player === computer:
+      console.log("Draw! Try again.")
+      break;
+
+    case player === 0 && computer === 2:
+      console.log("Your rock beats my scissors!");
+      break;
+    
+    case player === 2 && computer === 0:
+      console.log("My rock beats your scissors!");
+      break;
+    
+    case player > computer:
+      console.log("You win.");
+      break;
+    
+    case computer < computer:
+      console.log("I win!");
+
+  }
+  
+}
+
 
 // Return winner -> using case variable from above
 
@@ -41,5 +91,7 @@ function gameStart(){
   let playerChoice = playerAnswer();
   console.log(`You chose: `, playerChoice)
   console.log("Computer is working...");
+
+  compareResults();
 }
 
