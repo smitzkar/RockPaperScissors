@@ -29,7 +29,6 @@ function getRandInt(max) {
 // Generate computer choice -> rng
 function computerAnswer() {
   return getRandInt(3);
-
 }
 
 // Compare player vs computer choice, return answer -> case
