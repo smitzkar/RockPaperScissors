@@ -12,9 +12,7 @@ function playerInput() {
 
   while (validated == false) {
     let tempVar = prompt("Please choose from rock, paper or scissors.");
-    // if (!possibleInput.includes(tempVar)) {
-    // }
-    else {
+    if (possibleInput.includes(tempVar)) {
       validated = true;
     }
   }
