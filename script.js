@@ -56,14 +56,13 @@ function computerAnswer() {
 // Compare player vs computer choice, return answer -> case
 function compareResults(){
 
-  console.log(player);
-  console.log(computer);
+  // console.log(player);
+  // console.log(computer);
 
   switch(true){
-    // default: console.log("Something went wrong!");
-    // break;
 
-
+    default: console.log("Something went wrong!");
+    break;
 
     case player === computer:
       console.log("Draw! Try again.")
@@ -82,7 +81,7 @@ function compareResults(){
       break;
     
     case player < computer:
-      console.log("I win!");
+      console.log("Computer wins!");
 
   }
   
