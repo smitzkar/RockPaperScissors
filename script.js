@@ -15,15 +15,25 @@ function scriptTest() {
 }
 
 // temporary global variable
-let player;
-let computer;
+let player = 0;
+let computer = 0;
 let winner;
 
 // Get user choice (replaces playerChoice() )
 
-// on button click, set player choice  
+// declare some variables for later use (kind of pointless, tbh)
 const rock = document.getElementById("rock");
-// rock.addEventListener("click", player = 0);
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+// on button click, set player choice 
+rock.addEventListener("click", () => {player = 0; console.log(player)});
+paper.addEventListener("click", () => {player = 1; console.log(player)});
+scissors.addEventListener("click", () => {player = 2; console.log(player)});
+
+
+
+
 
 
 // Return randomInt from 0-max
