@@ -32,10 +32,6 @@ paper.addEventListener("click", () => {player = 1; gameStart()});
 scissors.addEventListener("click", () => {player = 2; gameStart()});
 
 
-
-
-
-
 // Return randomInt from 0-max
 // function getRandInt(max) {
 //   return Math.floor(Math.random()*max);
