@@ -27,9 +27,9 @@ const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 
 // on button click, set player choice 
-rock.addEventListener("click", () => {player = 0; console.log(player)});
-paper.addEventListener("click", () => {player = 1; console.log(player)});
-scissors.addEventListener("click", () => {player = 2; console.log(player)});
+rock.addEventListener("click", () => {player = 0; gameStart()});
+paper.addEventListener("click", () => {player = 1; gameStart()});
+scissors.addEventListener("click", () => {player = 2; gameStart()});
 
 
 
@@ -62,23 +62,23 @@ function compareResults(player, computer){
     break;
 
     case player === computer:
-      console.log("Draw! Try again.")
+      winner = "Draw! Try again.";
       break;
 
     case player === 0 && computer === 2:
-      console.log("Your rock beats my scissors!");
+      winner = "Your rock beats my scissors!";
       break;
     
     case player === 2 && computer === 0:
-      console.log("My rock beats your scissors!");
+      winner = "My rock beats your scissors!";
       break;
     
     case player > computer:
-      console.log("You win.");
+      winner = "You win.";
       break;
     
     case player < computer:
-      console.log("Computer wins!");
+      winner = "Computer wins!";
 
   }
   
@@ -90,10 +90,13 @@ function compareResults(player, computer){
 
 // Main function to start the game
 function gameStart(){
-  let playerChoice = playerAnswer();
-  console.log(`You chose: `, playerChoice)
-  console.log("Computer is working...");
-
+  let playerChoice = player;
   compareResults(playerChoice, computerAnswer());
+  showWinner(winner);
 }
 
+
+function showWinner(tmp)
+{
+  document.getElementById("result").textContent = tmp;
+}
